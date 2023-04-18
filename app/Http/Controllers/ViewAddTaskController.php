@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ToDoListController extends Controller
+class ViewAddTaskController extends Controller
 {
     public function index()
     {
-        return view('todo.index');
+        return view('todo.add.index');
     }
 }

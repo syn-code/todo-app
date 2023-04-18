@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\ToDoListController;
+use App\Http\Controllers\ManageToDoController;
+use App\Http\Controllers\ViewAddTaskController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +17,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/my-todo-list', [ToDoListController::class,'index'])->name('app.todo_list');
-Route::get('/add-a-task', [ToDoListController::class,'add'])->name('app.add_task');
+Route::get('/add-a-task', [ViewAddTaskController::class, 'index'])->name('app.add_a_task');
+Route::post('/task/add', [ManageToDoController::class,'add'])->name('app.task.add');
