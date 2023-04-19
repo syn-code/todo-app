@@ -9,10 +9,22 @@ use App\Enums\Status\StatusEnum;
 
 class TaskDto
 {
+    private int $id;
     private string $name;
     private StatusEnum $status ;
     private DateTimeInterface $createdAt;
     private ?DateTimeInterface $completedAt = null;
+
+    public function setId(int $id): self
+    {
+        $this->id = $id;
+        return $this;
+    }
+
+    public function getId(): int
+    {
+        return $this->id;
+    } 
 
     public function setName(string $name): self
     {
@@ -31,9 +43,9 @@ class TaskDto
         return $this;
     }
 
-    public function getStatus(): int
+    public function getStatus(): StatusEnum
     {
-        return $this->status->value;
+        return $this->status;
     }
 
     public function setCreatedAt(DateTimeInterface $createdAt): self

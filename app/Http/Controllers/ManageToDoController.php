@@ -22,4 +22,14 @@ class ManageToDoController extends Controller
 
       return redirect()->route('app.todo_list')->with(['success' => 'Task Added']);
     }
+
+    public function complete(Request $request)
+    {
+        dd($request);
+    }
+
+    public function delete(Reuqest $request)
+    {
+        dd($request);
+    }
 }

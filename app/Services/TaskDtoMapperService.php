@@ -19,7 +19,7 @@ class TaskDtoMapperService
     {
         $this->dto->setName($request->get('name', ''));
         
-        if ($request->has('task-completed')) {
+        if ($request->has('task_completed')) {
             $this->dto
                 ->setStatus(StatusEnum::Completed)
                 ->setCompletedAt(new DateTimeImmutable());

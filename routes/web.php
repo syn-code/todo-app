@@ -18,4 +18,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/my-todo-list', [ToDoListController::class,'index'])->name('app.todo_list');
 Route::get('/add-a-task', [ViewAddTaskController::class, 'index'])->name('app.add_a_task');
+
+/** CRUD Routes */
 Route::post('/task/add', [ManageToDoController::class,'add'])->name('app.task.add');
+Route::post('/task/delete', [ManageToDoController::class, 'delete'])->name('app.task.delete');
+Route::post('/task/complete', [ManageToDoController::class, 'complete'])->name('app.task.complete');
