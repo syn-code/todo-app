@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Services\AddTaskService;
 use Illuminate\Http\Request;
 use App\Services\TaskDtoMapperService;
+use Illuminate\View\View;
 
 class ManageToDoController extends Controller
 {
@@ -19,11 +20,6 @@ class ManageToDoController extends Controller
             $this->mapper->handle($request)
         );
 
-        return view(
-            'todo.add',
-            [
-                'success' => 'Task Addes',
-            ]
-        );
+      return redirect()->route('app.todo_list')->with(['success' => 'Task Added']);
     }
 }

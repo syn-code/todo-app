@@ -16,8 +16,7 @@ return new class extends Migration
             $table->string('name', 255);
             $table->unsignedBigInteger('status_id')->default(1);
             $table->dateTime('created_at');
-            $table->dateTime('completed_at');
-            $table->foreign('status_id')->references('id')->on('todo_status');
+            $table->dateTime('completed_at')->nullable(true);
         });
     }
 

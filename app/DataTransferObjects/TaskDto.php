@@ -5,11 +5,12 @@ declare(strict_types=1);
 namespace App\DataTransferObjects;
 
 use DateTimeInterface;
+use App\Enums\Status\StatusEnum;
 
 class TaskDto
 {
     private string $name;
-    private string $status ;
+    private StatusEnum $status ;
     private DateTimeInterface $createdAt;
     private ?DateTimeInterface $completedAt = null;
 
@@ -24,15 +25,15 @@ class TaskDto
         return $this->name;
     }
 
-    public function setStatus(string $status): self
+    public function setStatus(StatusEnum $status): self
     {
         $this->status = $status;
         return $this;
     }
 
-    public function getStatus(): string
+    public function getStatus(): int
     {
-        return $this->status;
+        return $this->status->value;
     }
 
     public function setCreatedAt(DateTimeInterface $createdAt): self

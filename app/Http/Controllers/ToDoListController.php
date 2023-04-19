@@ -8,6 +8,6 @@ class ToDoListController extends Controller
 {
     public function index()
     {
-        return view('todo.index');
+        return view('todo.list');
     }
 }
