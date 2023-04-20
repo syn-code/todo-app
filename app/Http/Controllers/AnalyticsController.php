@@ -14,8 +14,12 @@ class AnalyticsController extends Controller
 
     public function index()
     {
+
+        $result = $this->analyticsService->handle();
+
         return view('todo.analytics.index', [
-            'total' => $this->analyticsService->handle()
+            'createdTotal' => $result['createdTotal'],
+            'completedTotal' => $result['completedTotal'],
         ]);
     }
 }

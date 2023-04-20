@@ -11,7 +11,7 @@
                 <p class="card-text">
                     <div class="row">
                         <div class="col-sm-4 mx-auto">
-                            <div class="alert alert-primary text-center">{{-- $totalCreated --}}</div>
+                            <div class="alert alert-primary text-center">{{ $createdTotal }}</div>
                         </div>
                     </div>
                 </p>
@@ -27,7 +27,7 @@
                 <p class="card-text">
                     <div class="row">
                         <div class="col-sm-4 mx-auto">
-                            <div class="alert alert-primary text-center">{{-- $totalCompleted --}}</div>
+                            <div class="alert alert-primary text-center">{{ $completedTotal }}</div>
                         </div>
                     </div>
                 </p>
