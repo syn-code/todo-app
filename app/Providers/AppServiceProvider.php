@@ -17,6 +17,8 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(TaskDto::class);
         $this->app->bind(TaskDtoMapperService::class);
         $this->app->bind(GetTasksService::class);
+        $this->app->bind(CompleteTaskService::class);
+        $this->app->bind(DeleteTaskService::class);
     }
 
     /**

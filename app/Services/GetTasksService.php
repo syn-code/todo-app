@@ -17,12 +17,17 @@ class GetTasksService
         
         return $tasks->map(function ($task) {
             $dto = new TaskDto();
-            return $dto
+            $dto
                 ->setId($task->id)
                 ->setName($task->name)
                 ->setStatus(StatusEnum::matchStatus($task->status_id))
-                ->setCreatedAt(new DateTimeImmutable($task->created_at))
-                ->setCompletedAt($task->completed_at ?? null);
+                ->setCreatedAt(new DateTimeImmutable($task->created_at));
+
+                if (!is_null($task->completed_at)) {
+                    $dto->setCompletedAt(new DateTimeImmutable($task->completed_at));
+                }
+            
+            return $dto;
         });
     }
 

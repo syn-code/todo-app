@@ -6,6 +6,7 @@ namespace App\Services;
 
 use App\DataTransferObjects\TaskDto;
 use DateTimeImmutable;
+use DateTime;
 use Illuminate\Http\Request;
 use App\Enums\Status\StatusEnum;
 
@@ -19,15 +20,23 @@ class TaskDtoMapperService
     {
         $this->dto->setName($request->get('name', ''));
         
-        if ($request->has('task_completed')) {
-            $this->dto
-                ->setStatus(StatusEnum::Completed)
-                ->setCompletedAt(new DateTimeImmutable());
-        } else {
+        if ($request->get('task_created')) {
             $this->dto
                 ->setStatus(StatusEnum::Todo)
-                ->setCreatedAt(new DateTimeImmutable());
+                ->setCreatedAt(new DateTime());
         }
+        
+        if ($request->get('task_completed')) {
+            $this->dto
+                ->setId((int)$request->get('task_id'))
+                ->setStatus(StatusEnum::Completed)
+                ->setCompletedAt(new DateTimeImmutable());
+        } 
+    
+        if ($request->get('task_delete')) {
+            $this->dto
+                ->setId((int)$request->get('task_id'));
+        }        
         
         return $this->dto;
     }

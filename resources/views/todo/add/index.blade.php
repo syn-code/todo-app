@@ -3,6 +3,7 @@
 @section('content')
     <form action={{ route('app.task.add') }} method="POST">
         @csrf
+        <input type="hidden" name="task_created" value="true" />
         <div class="row">
             <div class="col">
                 <label for="task-name">Task Name</label>

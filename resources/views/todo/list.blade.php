@@ -29,6 +29,7 @@
                         <td>{{ $task->getCompletedAt()?->format('d/m/Y h:m:i') ?? '-' }}</td>
                         <td>
                             <ul class="list-inline">
+                                @if ($task->getStatus()->name !== 'Completed') 
                                 <li class="list-inline-item">
                                     <form action="{{ route('app.task.complete') }}" method="POST">
                                         @csrf
@@ -37,10 +38,11 @@
                                         <button type="submit" class="btn btn-success">Complete Task</button>
                                     </form>
                                 </li>
+                                @endif
                                 <li class="list-inline-item">
                                     <form action="{{ route('app.task.delete') }}" method="POST">
                                         @csrf
-                                        <input type="hidden" name="task_deleted" value="true" />
+                                        <input type="hidden" name="task_delete" value="true" />
                                         <input type="hidden" name="task_id" value="{{ $task->getId() }}" />
                                         <button class="btn btn-danger" type="submit">Delete Task</button>
                                     </form>
