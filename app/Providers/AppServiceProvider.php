@@ -19,6 +19,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(GetTasksService::class);
         $this->app->bind(CompleteTaskService::class);
         $this->app->bind(DeleteTaskService::class);
+        $this->app->bind(AnalyticsService::class);
     }
 
     /**

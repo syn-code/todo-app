@@ -3,6 +3,7 @@
 use App\Http\Controllers\ToDoListController;
 use App\Http\Controllers\ManageToDoController;
 use App\Http\Controllers\ViewAddTaskController;
+use App\Http\Controllers\AnalyticsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,3 +24,5 @@ Route::get('/add-a-task', [ViewAddTaskController::class, 'index'])->name('app.ad
 Route::post('/task/add', [ManageToDoController::class,'add'])->name('app.task.add');
 Route::post('/task/delete', [ManageToDoController::class, 'delete'])->name('app.task.delete');
 Route::post('/task/complete', [ManageToDoController::class, 'complete'])->name('app.task.complete');
+
+Route::get('/analytics', [AnalyticsController::class, 'index'])->name('app.analytics');
