@@ -14,15 +14,13 @@ class AnalyticsService
     {
         $fromDate = $dto->getFromDate()->format('Y-m-d 00:00:00');
         $toDate = $dto->getToDate()->format('Y-m-d 23:59:59');
-        
-        //dd($dto->getSearchBy(), $fromDate, $toDate);
 
         $result = null;
-          
+
         if ($dto->getSearchBy() === StatusEnum::Completed->value) {
             $result = $this->getCompletedTasks($dto->getSearchBy(), $fromDate, $toDate);
         }
-        
+
         if ($dto->getSearchBy() === StatusEnum::Todo->value) {
             $result = $this->getTodoTasks($dto->getSearchBy(), $fromDate, $toDate);
         }
