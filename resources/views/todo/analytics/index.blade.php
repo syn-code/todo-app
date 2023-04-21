@@ -6,7 +6,7 @@
             <div class="card mb-4 box-shadow">
             <div class="card-body">
                 <div class="card-title text-center">
-                    <h3>Total Tasks Created</h3>
+                    <h3>Total Tasks Todo</h3>
                 </div>
                 <p class="card-text">
                     <div class="row">
