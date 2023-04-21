@@ -18,4 +18,13 @@ enum StatusEnum: int
             3 => StatusEnum::Completed
         };
     }
+
+    public static function getEnums(): array
+    {
+        return [
+            StatusEnum::Todo,
+            StatusEnum::InProgress,
+            StatusEnum::Completed,
+        ];
+    }
 }

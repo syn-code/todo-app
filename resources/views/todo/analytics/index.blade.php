@@ -40,16 +40,29 @@
                     <div class="row">
                         <form action="#" method="GET">
                             <div class="row">
+                                <div class="col mb-2">
+                                    <label>Task Status</label>
+                                    <select class="form-control" name="search_by" required="true" />
+                                        <option value="">Please Select</option>
+                                        @foreach($choices as $choice)
+                                            @if ($choice->name !== 'InProgress')
+                                                <option value="{{ $choice->value }}">{{ $choice->name }}</option>
+                                            @endif
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
                                 <div class="col-sm-5">
                                     <label>Date From</label>
-                                    <input type="date" name="date_from"/>
+                                    <input type="date" class="form-control" name="date_from"/>
                                 </div>
                                 <div class="col-sm-5">
                                     <label>Date To</label>
-                                    <input type="date" name="date_to"/>
+                                    <input type="date" class="form-control" name="date_to"/>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-primary mt-2">Get Tasks</button>
+                            <button type="submit" class="btn btn-primary mt-2">Get Results</button>
                         </form>
                     </div>
                 </div>

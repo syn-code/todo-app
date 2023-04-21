@@ -8,8 +8,20 @@ use DateTimeInterface;
 
 class AnalyticsDto
 {
+    private int $searchBy;
     private DateTimeInterface $fromDate;
     private DateTimeInterface $toDate;
+
+    public function setSearchBy(int $searchBy): self
+    {
+        $this->searchBy = $searchBy;
+        return $this;
+    }
+
+    public function getSearchBy(): int
+    {
+        return $this->searchBy;
+    }
 
     public function setFromDate(DateTimeInterface $fromDate): self
     {

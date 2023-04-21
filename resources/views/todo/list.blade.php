@@ -25,8 +25,8 @@
                         <td>{{ $task->getId() }}</td>
                         <td>{{ $task->getName() }}</td>
                         <td>{{ $task->getStatus()->name }}</td>
-                        <td>{{ $task->getCreatedAt()->format('d/m/Y h:m:i') }}</td>
-                        <td>{{ $task->getCompletedAt()?->format('d/m/Y h:m:i') ?? '-' }}</td>
+                        <td>{{ $task->getCreatedAt()->format('d/m/Y H:i:s') }}</td>
+                        <td>{{ $task->getCompletedAt()?->format('d/m/Y H:i:s') ?? '-' }}</td>
                         <td>
                             <ul class="list-inline">
                                 @if ($task->getStatus()->name !== 'Completed') 
